@@ -6,5 +6,8 @@ public class Test {
 	Test(int cakes){
 		this.cakes = cakes;
 	}
-
+	
+	boolean eat() {
+		return true;
+	}
 }
