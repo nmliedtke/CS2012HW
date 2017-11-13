@@ -19,6 +19,16 @@ class Show {
 		this.avgLength = avgLength;
 	}
 	
-	
+	public double avgRuntime() {
+		double sum = 0;
+		int total = 0;
+		double avg;
+		for(Episode epi: this.episodes) {
+			sum = epi.runTime + sum;
+			total = total + 1;
+		}
+		avg = sum / total;
+		return avg;
+	}
 	
 }

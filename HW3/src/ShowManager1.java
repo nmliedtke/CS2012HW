@@ -16,7 +16,8 @@ class ShowManager1{
 				returnListNight.add(show);
 			}
 		}
-		return ShowSummary(returnListDay, returnListNight);
+		ShowSummary report = new ShowSummary(returnListDay, returnListNight);
+		return report;
 	}
 	
 }
