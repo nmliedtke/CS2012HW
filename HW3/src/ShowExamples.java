@@ -52,4 +52,5 @@ public class ShowExamples
 		assertEquals(report1, report2);
 	}
 
+	// the subtasks for the organizeShows needs to 
 }

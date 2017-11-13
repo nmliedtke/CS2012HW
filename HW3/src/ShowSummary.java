@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-class ShowSummary {
+class ShowSummary{
 	
 	LinkedList<Show> daytime;
 	LinkedList<Show> primetime;
@@ -16,6 +16,7 @@ class ShowSummary {
 		this.daytime = daytime;
 		this.primetime = primetime;
 	}
+	
 
 	// the equals method for use in testing
 	 public boolean equals(Object other) 
