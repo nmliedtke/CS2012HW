@@ -6,8 +6,12 @@ public class DataSmoothExamples
 {  
   LinkedList<Show> shows = new LinkedList<Show>();
   LinkedList<Show> shows1 = new LinkedList<Show>();
+  LinkedList<Show> shows2 = new LinkedList<Show>();
+
   LinkedList<Double> showResults = new LinkedList<Double>();
   LinkedList<Double> showResults1 = new LinkedList<Double>();
+  LinkedList<Double> showResults2 = new LinkedList<Double>();
+
   DataSmooth1 D1 = new DataSmooth1();
 
   
@@ -57,7 +61,7 @@ public class DataSmoothExamples
   {
 	  LinkedList<Double> runtimes1 = D1.dataSmooth(shows);
 	  LinkedList<Double> runtimes2 = D1.dataSmooth(shows1);
-	  LinkedList<Double> runtimes3 = D1.dataSmooth(shows1);
+	  LinkedList<Double> runtimes3 = D1.dataSmooth(shows2);
 
 
 	  for(int i = 0; i < runtimes1.size(); i++)
@@ -72,7 +76,7 @@ public class DataSmoothExamples
 	  
 	  for(int i = 0; i < runtimes3.size(); i++)
 	  {
-		  assertEquals(runtimes3.get(i), showResults1.get(i), .01);
+		  assertEquals(runtimes3.get(i), showResults2.get(i), .01);
 	  }
 
   }
