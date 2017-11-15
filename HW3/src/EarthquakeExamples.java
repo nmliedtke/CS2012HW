@@ -3,10 +3,12 @@ import org.junit.Test;
 import java.util.LinkedList;
 
 public class EarthquakeExamples {
-  Earthquake1 E1 = new Earthquake1();
+  Earthquake2 E1 = new Earthquake2();
   LinkedList<Double> noData = new LinkedList<Double>();
   LinkedList<Double> threeDates = new LinkedList<Double>();  
   LinkedList<MaxHzReport> NovReports = new LinkedList<MaxHzReport>();
+
+
   
   public EarthquakeExamples() {
     threeDates.add(20151013.0);

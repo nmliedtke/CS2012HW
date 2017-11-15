@@ -10,6 +10,9 @@ class DataSmooth2 {
 	  for(int i = 1; i < shows.size() - 1; i++ ) {
 		  smoothList.add((shows.get(i).avgRuntime() + shows.get(i-1).avgRuntime() + shows.get(i+1).avgRuntime()) / 3);
 	  }
+	  smoothList.addFirst(shows.get(0).avgRuntime());
+	  smoothList.addLast(shows.get(shows.size() - 1).avgRuntime());
+	  
 	  return smoothList;
 
   }
