@@ -3,6 +3,7 @@ import java.util.LinkedList;
 class DataSmooth1 {
   DataSmooth1(){}
   
+  // takes a list of shows and produces a list of "smoothed" runtimes.
   public LinkedList<Double> dataSmooth(LinkedList<Show> shows) 
   {
 	  LinkedList<Double> notSmoothList = new LinkedList<Double>();
@@ -14,6 +15,7 @@ class DataSmooth1 {
 	  
 	  }
   
+  // "smooths" a list of doubles by averaging the data with the data points around it. The first and last points are left alone
   public LinkedList<Double> smooth(LinkedList<Double> List){
 	  LinkedList<Double> resultList = new LinkedList<Double>();
 	  for(int i = 0; i < (List.size()); i++) {

@@ -52,5 +52,9 @@ public class ShowExamples
 		assertEquals(report1, report2);
 	}
 
-	// the subtasks for the organizeShows needs to 
+	// the subtasks for the organizeShows are as follows:
+	// - separate the given list into PrimeTime and DayTime shows
+	// - ignore shows that are not PrimeTime or DayTime
+	// - create a showSummary with a list of DayTime and PrimeTime shows
+	// 
 }

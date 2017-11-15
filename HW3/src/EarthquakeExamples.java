@@ -29,4 +29,10 @@ public class EarthquakeExamples {
                  E1.dailyMaxForMonth(threeDates, 11));
   }
 
+  // the subtasks for dailyMaxForMonth are as follows:
+  // - identify dates compared to data points.
+  // - ignore dates in the data that aren't in the given month
+  // - identify the max reading for a specific day
+  // - make a new MaxHzReport for a date and its max reading
+  // - add the new MaxHzReports to a list to be returned
 }

@@ -7,6 +7,7 @@ public class DataSmoothExamples
   LinkedList<Show> shows = new LinkedList<Show>();
   LinkedList<Double> showResults = new LinkedList<Double>();
   DataSmooth1 D1 = new DataSmooth1();
+
   
   public DataSmoothExamples() 
   {
@@ -44,12 +45,20 @@ public class DataSmoothExamples
   @Test
   public void instructorTestDS() 
   {
-	  LinkedList<Double> runtimes = D1.dataSmooth(shows);
-	  
-	  for(int i = 0; i < runtimes.size(); i++)
+	  LinkedList<Double> runtimes1 = D1.dataSmooth(shows);
+
+	  for(int i = 0; i < runtimes1.size(); i++)
 	  {
-		  assertEquals(runtimes.get(i), showResults.get(i), .01);
+		  assertEquals(runtimes1.get(i), showResults.get(i), .01);
 	  }
+	  
+
   }
   
+  //the dataSmooth function has the following subtasks:
+  // - average all of the runtimes of a show's epsiodes
+  // - make a list of average runtimes from a list of shows
+  // - "smooth" the data by averaging a datum with the data points around it, leaving 
+  // the first and last datum alone
+  // - return the list of "smoothed" data
 }

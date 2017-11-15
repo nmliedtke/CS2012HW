@@ -19,6 +19,7 @@ class Show {
 		this.avgLength = avgLength;
 	}
 	
+	// calculates the average runtime of all of a shows episodes.
 	public double avgRuntime() {
 		double sum = 0;
 		int total = 0;

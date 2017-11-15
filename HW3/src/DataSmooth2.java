@@ -3,6 +3,9 @@ import java.util.LinkedList;
 class DataSmooth2 {
   DataSmooth2(){}
   
+  // Takes a list of shows and makes a "smooth" list of their average runtimes. 
+  // Smooth is the average of the point with the points around it.  
+  // The last and first data points are left alone
   public LinkedList<Double> dataSmooth(LinkedList<Show> shows) 
   {
 	  LinkedList<Double> smoothList = new LinkedList<Double>();

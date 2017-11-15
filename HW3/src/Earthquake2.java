@@ -8,6 +8,8 @@ class Earthquake2 {
   // extracts the month from an 8-digit date
   int extractMonth(double dateNum) { return ((int)dateNum % 10000) / 100; }
 
+  // takes a list of data and produces a list of MaxHzReport for the given month 
+  // the MaxHzReport contains a date and the max reading for that day.
   public LinkedList<MaxHzReport> dailyMaxForMonth(LinkedList<Double> data,
                                                   int month) {
 	  
