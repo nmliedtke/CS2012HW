@@ -5,11 +5,11 @@ public class HeapTester {
 		  boolean one = hAdded.hasElt(elt);
 		  
 		  boolean two = hAdded.isHeap();
-		  
+		 // boolean two = true;
 		  boolean three = hAdded.contains(hOrig);
-		  
+		 // boolean three = true;
 		  boolean four = ((hOrig.size() + 1) == hAdded.size());
-		  
+		  //boolean four = true;
 		  return (one && two && three && four);
 		  }
 	  // hasElt(elt, hAdded) check if elt is in the hAdded
