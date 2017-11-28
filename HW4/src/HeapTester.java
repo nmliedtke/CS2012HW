@@ -20,6 +20,10 @@ public class HeapTester {
 	  boolean remMinEltTester(IHeap hOrig, IBinTree hRemoved) {
 
 		    //...code to compare hOrig and hRemoved as appropriate...
-		  return true;
+		  boolean one = !hRemoved.hasElt(hOrig.getData());
+		  boolean two = hOrig.contains(hRemoved);
+		  boolean three = hRemoved.isHeap();
+		  boolean four = ((hOrig.size() == hRemoved.size() + 1));
+		  return (one && two && three && four);
 		  }
 }
