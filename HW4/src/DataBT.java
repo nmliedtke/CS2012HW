@@ -66,4 +66,14 @@ class DataBT implements IBinTree {
  public int height() {
   return 1 + Math.max(this.left.height(), this.right.height());
  }
+ 
+
+ public boolean isHeap(){
+
+ 	return this.left.greaterThan(this.data) && this.right.greaterThan(this.data) && this.right.isHeap() && this.left.isHeap();
+ }
+
+ public boolean greaterThan(int a) {
+	 return this.data > a;
+ }
 }

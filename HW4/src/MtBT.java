@@ -36,4 +36,14 @@ class MtBT implements IBinTree {
 	 }
 	 else return false;
  }
+ 
+ public boolean isHeap() {
+	 return true;
+ }
+
+ 
+ public boolean greaterThan(int a) {
+	 return true;
+	 
+ }
 }

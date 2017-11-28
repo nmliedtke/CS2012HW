@@ -11,4 +11,8 @@ interface IBinTree {
  boolean contains(IBinTree given);
  int getData();
  LinkedList<Integer> makeList();
- void addToList(LinkedList<Integer> list);}
+ void addToList(LinkedList<Integer> list);
+ boolean isHeap();
+
+ boolean greaterThan(int a); 
+}
