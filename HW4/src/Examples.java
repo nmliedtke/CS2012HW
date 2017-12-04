@@ -1,4 +1,3 @@
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -42,7 +41,6 @@ public class Examples {
 	    IBinTree node24 = new DataBT(7, node23, node22);
 	    IBinTree node26 = new DataBT(4, node24, emptyNode);
 	    IBinTree myBinTree3 = new DataBT(3, node26, emptyNode);
-
 	    
 	
 	    Examples(){
