@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.GregorianCalendar;
@@ -34,12 +35,16 @@ public class Examples {
 
 	LinkedList<DailyWeatherReport> L1 = new LinkedList<DailyWeatherReport>();
 	LinkedList<DailyWeatherReport> L2 = new LinkedList<DailyWeatherReport>();
-	
+	LinkedList<DailyWeatherReport> L3 = new LinkedList<DailyWeatherReport>();
+
 	IReadings I1 = new ReportList(L1);
 	IReadings I2 = new ReportList(L2);
-	
+	IReadings I3 = new ReportList(L3);
+
 	WeatherMonitor W1 = new WeatherMonitor(I1);
 	WeatherMonitor W2 = new WeatherMonitor(I2);
+	WeatherMonitor W3 = new WeatherMonitor(I3);
+
 
 	
 	Examples(){
@@ -79,8 +84,9 @@ public class Examples {
 	
 	@Test
 	public void checkAddDailyReport() {
-		W1.addDailyReport(date5, RL1);
-		assertTrue(L1.equals(L2));
+		W3.addDailyReport(date5, RL1);
+		assertFalse(L3.isEmpty());
 	}
+	
 	
 }
