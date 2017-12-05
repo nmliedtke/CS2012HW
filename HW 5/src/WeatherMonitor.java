@@ -3,52 +3,62 @@ import java.util.LinkedList;
 
 public class WeatherMonitor  {
 	
-	IReading dailyReports;
+	private IReadings dailyReports;
 	
-	WeatherMonitor(IReading dailyReports){
+	WeatherMonitor(IReadings dailyReports){
 		this.dailyReports = dailyReports;
 	}
 	
-	int averageHighForMonth(int month, int year){
-		int monthHigh = -999;
-		for(DailyWeatherReport r: this.dailyReports) {
-			if(r.date.get(GregorianCalendar.YEAR) == year){
-				if(r.date.get(GregorianCalendar.MONTH) == month) {
-					if(r.highTemp > monthHigh) {
-						monthHigh = r.highTemp;
-					}
+	double averageHighForMonth(int month, int year){
+		int num = 0;
+		int total = 0;
+		for(DailyWeatherReport r: this.dailyReports.getList()) {
+			if(r.getDate().get(GregorianCalendar.YEAR) == year){
+				if(r.getDate().get(GregorianCalendar.MONTH) == month) {
+					total = total + r.getHighTemp();
+					num++;
 				}
 			}
 		}
-		return monthHigh;
+		if(num == 0) {
+			return -999;
+		}
+		else {
+			return total / num;
+		}
 	}
 	
 	double averageLowForMonth(int month, int year) {
-		int monthLow = 999;
-		for(DailyWeatherReport r: this.dailyReports) {
-			if(r.date.get(GregorianCalendar.YEAR) == year){
-				if(r.date.get(GregorianCalendar.MONTH) == month) {
-					if(r.lowTemp < monthLow) {
-						monthLow = r.lowTemp;
-					}
+		int num = 0;
+		int total = 0;
+		for(DailyWeatherReport r: this.dailyReports.getList()) {
+			if(r.getDate().get(GregorianCalendar.YEAR) == year){
+				if(r.getDate().get(GregorianCalendar.MONTH) == month) {
+						total = total + r.getLowTemp();
+						num++;
 				}
 			}
 		}
-		return monthLow;
+		if(num == 0) {
+			return 999;
+		}
+		else {
+			return total / num;
+		}
 	}
 
 	void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
 		int dayHigh = -999;
 		int dayLow = 999;
 		for(Reading r: readings) {
-			if(r.temperature > dayHigh) {
-				dayHigh = r.temperature;
+			if(r.getTemperature()> dayHigh) {
+				dayHigh = r.getTemperature();
 			}
-			else if(r.temperature < dayLow) {
-				dayLow = r.temperature;
+			else if(r.getTemperature() < dayLow) {
+				dayLow = r.getTemperature();
 			}
 		}
-		
-		this.dailyReports.add(new DailyWeatherReport(date, dayLow, dayHigh));
+		this.dailyReports.addReport(new DailyWeatherReport(date, dayLow, dayHigh));
 	}
+	
 }
