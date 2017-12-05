@@ -1,11 +1,11 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class WeatherMonitor <TREADING> {
+public class WeatherMonitor  {
 	
-	TREADING dailyReports;
+	IReading dailyReports;
 	
-	WeatherMonitor(TREADING dailyReports){
+	WeatherMonitor(IReading dailyReports){
 		this.dailyReports = dailyReports;
 	}
 	
