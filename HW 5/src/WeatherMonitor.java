@@ -1,11 +1,11 @@
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
-public class WeatherMonitor {
+public class WeatherMonitor <TREADING> {
 	
-	LinkedList<DailyWeatherReport> dailyReports;
+	TREADING dailyReports;
 	
-	WeatherMonitor(LinkedList<DailyWeatherReport> dailyReports){
+	WeatherMonitor(TREADING dailyReports){
 		this.dailyReports = dailyReports;
 	}
 	
@@ -37,10 +37,10 @@ public class WeatherMonitor {
 		return monthLow;
 	}
 
-	void addDailyReport(GregorianCalendar date, LinkedList<Readings> readings) {
+	void addDailyReport(GregorianCalendar date, LinkedList<Reading> readings) {
 		int dayHigh = -999;
 		int dayLow = 999;
-		for(Readings r: readings) {
+		for(Reading r: readings) {
 			if(r.temperature > dayHigh) {
 				dayHigh = r.temperature;
 			}
