@@ -7,7 +7,7 @@ class ElectionData {
 	
   LinkedList<String> ballot = new LinkedList<String>();
   HashMap<String,Vote> firstChoice = new HashMap<String,Vote>();
-  HashMap<String,Vote> secondsChoice = new HashMap<String,Vote>();
+  HashMap<String,Vote> secondChoice = new HashMap<String,Vote>();
   HashMap<String,Vote> thirdChoice = new HashMap<String,Vote>();
   Scanner keyboard = new Scanner(System.in);
   
@@ -22,6 +22,13 @@ class ElectionData {
     for (String s : ballot) {
       System.out.println(s);
     }
+  }
+  
+  public void processVote(String first, String second, String third) {
+	  Vote aVote = new Vote(first, second, third);
+	  firstChoice.put(first, aVote);
+	  secondChoice.put(second, aVote);
+	  thirdChoice.put(third, aVote);
   }
   
   public void screen() {
