@@ -44,7 +44,28 @@ class ElectionData implements IElectionData{
   }
   
   public String findWinnerMostPoints() {
-	  firstChoice.get()
+	  int currentTotal = 0;
+	  String winner = "none";
+	  for(String s: ballot) {
+		  int total = firstChoice.get(s) * 3 + secondChoice.get(s) * 2 + thirdChoice.get(s);
+		  if (currentTotal < total) {
+			  winner = s;
+		  }
+	  }
+	  return winner;
+  }
+  
+  public String findWinnerMostFirstVotes() {
+	  int total = 0;
+	  String winner = "Runoff required";
+	  for(String s: ballot) {
+		  total = firstChoice.get(s) + total;
+	  }
+	  for(String s: ballot) {
+		  if(firstChoice.get(s) >= total/2) {
+			  
+		  }
+	  }
   }
   
   public void screen() {
@@ -55,12 +76,4 @@ class ElectionData implements IElectionData{
     System.out.println("You voted for " + candidate);
   }
   
-  public int countVotes(String forcand) {
-    int numvotes = 0;
-    for (String s : votes) {
-      if (s.equals(forcand))
-        numvotes = numvotes+1;
-    }
-    return numvotes;
-    }
   }
