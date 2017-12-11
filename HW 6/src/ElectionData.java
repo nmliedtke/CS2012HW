@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.HashMap;
 
 
-class ElectionData {
+class ElectionData implements IElectionData{
 	
   LinkedList<String> ballot = new LinkedList<String>();
   HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
@@ -31,9 +31,9 @@ class ElectionData {
 	  thirdChoice.replace(third, thirdChoice.get(third) + 1);
   }
   
-  public void addCandidate(String candidate) {
+  public void addCandidate(String candidate) throws CandidateExistsException{
 	  if (ballot.contains(candidate)){
-		  //throw<error>;
+		  throw new CandidateExistsException(candidate);
 	  }
 	  else {
 		  ballot.add(candidate);
