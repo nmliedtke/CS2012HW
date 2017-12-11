@@ -6,9 +6,9 @@ import java.util.HashMap;
 class ElectionData {
 	
   LinkedList<String> ballot = new LinkedList<String>();
-  HashMap<String,LinkedList<Vote>> firstChoice = new HashMap<String,LinkedList<Vote>>();
-  HashMap<String,LinkedList<Vote>> secondChoice = new HashMap<String,LinkedList<Vote>>();
-  HashMap<String,LinkedList<Vote>> thirdChoice = new HashMap<String,LinkedList<Vote>>();
+  HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
+  HashMap<String,Integer> secondChoice = new HashMap<String,Integer>();
+  HashMap<String,Integer> thirdChoice = new HashMap<String,Integer>();
   Scanner keyboard = new Scanner(System.in);
   
   ElectionData() {
@@ -25,15 +25,15 @@ class ElectionData {
   }
   
   public void processVote(String first, String second, String third) {
-	  Vote aVote = new Vote(first, second, third);
-	  firstChoice.put(first, aVote);
-	  secondChoice.put(second, aVote);
-	  thirdChoice.put(third, aVote);
+	  //Vote aVote = new Vote(first, second, third);
+	  firstChoice.put(first, firstChoice.get(first) + 1);
+	  secondChoice.put(second, secondChoice.get(second) + 1);
+	  thirdChoice.put(third, thirdChoice.get(third) + 1);
   }
   
   public void addCandidate(String candidate) {
 	  if (ballot.contains(candidate)){
-		  
+		  throw<error>;
 	  }
 	  else {
 		  ballot.add(candidate);
