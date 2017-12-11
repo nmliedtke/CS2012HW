@@ -26,18 +26,25 @@ class ElectionData {
   
   public void processVote(String first, String second, String third) {
 	  //Vote aVote = new Vote(first, second, third);
-	  firstChoice.put(first, firstChoice.get(first) + 1);
-	  secondChoice.put(second, secondChoice.get(second) + 1);
-	  thirdChoice.put(third, thirdChoice.get(third) + 1);
+	  firstChoice.replace(first, firstChoice.get(first) + 1);
+	  secondChoice.replace(second, secondChoice.get(second) + 1);
+	  thirdChoice.replace(third, thirdChoice.get(third) + 1);
   }
   
   public void addCandidate(String candidate) {
 	  if (ballot.contains(candidate)){
-		  throw<error>;
+		  //throw<error>;
 	  }
 	  else {
 		  ballot.add(candidate);
+		  firstChoice.put(candidate, 0);
+		  secondChoice.put(candidate, 0);
+		  thirdChoice.put(candidate, 0);
 	  }
+  }
+  
+  public String findWinnerMostPoints() {
+	  firstChoice.get()
   }
   
   public void screen() {
