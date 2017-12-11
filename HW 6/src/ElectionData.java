@@ -1,14 +1,20 @@
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.HashMap;
+
 
 class ElectionData {
+	
   LinkedList<String> ballot = new LinkedList<String>();
-  LinkedList<String> votes = new LinkedList<String>();
+  HashMap<String,Vote> firstChoice = new HashMap<String,Vote>();
+  HashMap<String,Vote> secondsChoice = new HashMap<String,Vote>();
+  HashMap<String,Vote> thirdChoice = new HashMap<String,Vote>();
   Scanner keyboard = new Scanner(System.in);
   
   ElectionData() {
     this.ballot.add("Gompei");
     this.ballot.add("Husky");
+    this.ballot.add("John Cena");
   }
   
   public void printBallot() {
