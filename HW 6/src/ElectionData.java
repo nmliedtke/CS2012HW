@@ -9,7 +9,7 @@ class ElectionData implements IElectionData{
  private HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
  private HashMap<String,Integer> secondChoice = new HashMap<String,Integer>();
  private HashMap<String,Integer> thirdChoice = new HashMap<String,Integer>();
- private Scanner keyboard = new Scanner(System.in);
+ //private Scanner keyboard = new Scanner(System.in);
   ElectionData() {
     this.ballot.add("Gompei");
     this.ballot.add("Husky");
@@ -67,7 +67,7 @@ class ElectionData implements IElectionData{
 	  secondChoice.replace(second, secondChoice.get(second) + 1);
 	  thirdChoice.replace(third, thirdChoice.get(third) + 1);
   }
-  
+ 
   public void addCandidate(String candidate) throws CandidateExistsException{
 	  if (ballot.contains(candidate)){
 		  throw new CandidateExistsException(candidate);
@@ -79,7 +79,7 @@ class ElectionData implements IElectionData{
 		  thirdChoice.put(candidate, 0);
 	  }
   }
-  
+ 
   public String findWinnerMostPoints() {
 	  int currentTotal = 0;
 	  String winner = "none";
@@ -91,7 +91,7 @@ class ElectionData implements IElectionData{
 	  }
 	  return winner;
   }
-  
+ 
   public String findWinnerMostFirstVotes() {
 	  int total = 0;
 	  String winner = "Runoff required";
@@ -105,27 +105,5 @@ class ElectionData implements IElectionData{
 	  }
 	  return (winner);
   }
-  
-  public void screen() throws DuplicateVotesException, UnknownCandidateException {
-    this.printBallot();
-    System.out.println("Who do you want to vote for as first choice?");
-    String candidate = keyboard.next();
-    System.out.println("Who do you want to vote for as second choice?");
-    String candidate1 = keyboard.next();
-    System.out.println("Who do you want to vote for as third choice?");
-    String candidate2 = keyboard.next();
-    try {
-    	this.processVote(candidate, candidate1, candidate2);
-        System.out.println("You voted for " + candidate + ", " + candidate1 + ", and " + candidate2);
-    }catch(UnknownCandidateException ex){
-    	System.out.println("The candidate " + ex.getName() + " is not on the ballot");
-    	
-    }catch(DuplicateVotesException ex) {
-    	System.out.println("You voted for  " + ex.getName() + " twice, which is not possible");
-
-    }
-   }
-
-
   
   }

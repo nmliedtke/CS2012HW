@@ -1,0 +1,9 @@
+/CandidateExistsException.class
+/CompileCheck.class
+/DuplicateVotesException.class
+/ElectionData.class
+/Examples.class
+/IElectionData.class
+/UnknownCandidateException.class
+/Vote.class
+/VotingMachine.class
