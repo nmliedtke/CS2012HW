@@ -4,11 +4,11 @@ public class VotingMachine {
 	
 	private ElectionData Data;
 	private Scanner keyboard = new Scanner(System.in);
-
 	
-	VotingMachine(){
-		this.Data = new ElectionData();
-	}
+	
+//	VotingMachine(){
+//		//this.Data = new ElectionData();
+//	}
 	
 	  public void screen() throws DuplicateVotesException, UnknownCandidateException {
 		    this.Data.printBallot();

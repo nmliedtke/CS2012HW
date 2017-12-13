@@ -6,14 +6,12 @@ import java.util.HashMap;
 class ElectionData implements IElectionData{
 	
  private LinkedList<String> ballot = new LinkedList<String>();
- private HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
+  HashMap<String,Integer> firstChoice = new HashMap<String,Integer>();
  private HashMap<String,Integer> secondChoice = new HashMap<String,Integer>();
  private HashMap<String,Integer> thirdChoice = new HashMap<String,Integer>();
  //private Scanner keyboard = new Scanner(System.in);
   ElectionData() {
-    this.ballot.add("Gompei");
-    this.ballot.add("Husky");
-    this.ballot.add("John Cena");
+
   }
   
   LinkedList<String> getBallot(){
@@ -84,7 +82,8 @@ class ElectionData implements IElectionData{
 	  int currentTotal = 0;
 	  String winner = "none";
 	  for(String s: ballot) {
-		  int total = firstChoice.get(s) * 3 + secondChoice.get(s) * 2 + thirdChoice.get(s);
+		  int total;
+		  total = (firstChoice.get(s) * 3) + (secondChoice.get(s) * 2) + (thirdChoice.get(s));
 		  if (currentTotal < total) {
 			  winner = s;
 		  }
