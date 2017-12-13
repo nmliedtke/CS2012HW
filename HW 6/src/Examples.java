@@ -2,10 +2,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class Examples {
-	Examples(){
+	public Examples(){
 		System.out.println("The candidates are ");
 	}
 	
@@ -72,21 +72,19 @@ public class Examples {
 	
 
 	}
-//	
-//	@Test(expected = CandidateExistsException.class)
-//	public void testCandidateExistsException() throws CandidateExistsException{
-//		//System.out.println(Setup1().findWinnerMostFirstVotes());
-//		ElectionData data = new ElectionData();
-//		data.addCandidate("1");
-//		data.addCandidate("2");
-//		data.addCandidate("3");
-//		data.addCandidate("4");
-//		data.addCandidate("5");
-//		data.addCandidate("1");
-//		
-//	
-//
-//	}
+	
+	@Test(expected = CandidateExistsException.class)
+	public void testCandidateExistsException() throws CandidateExistsException{
+		//System.out.println(Setup1().findWinnerMostFirstVotes());
+		ElectionData data = new ElectionData();
+		data.addCandidate("1");
+		data.addCandidate("2");
+		data.addCandidate("3");
+		data.addCandidate("4");
+		data.addCandidate("5");
+		data.addCandidate("1");
+		
+	}
 	
 	
 	
