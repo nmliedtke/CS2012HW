@@ -1,6 +1,6 @@
 
 public class CandidateExistsException extends Exception{
-	String name;
+	private String name;
 	
 	CandidateExistsException(String name){
 		this.name = name;
